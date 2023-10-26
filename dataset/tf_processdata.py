@@ -54,7 +54,7 @@ def train_input_fn(batch_size, max_seq, max_n_node):
 
     dataset = tf.data.Dataset.from_generator(partial(data_generator, data), output_types=tf.int32)
     dataset = dataset.map(process_data, num_parallel_calls=tf.data.experimental.AUTOTUNE)
-    # TODO: Don't forget to enable shuffle
+    # Don't forget to enable shuffle
     dataset = dataset.shuffle(100000)
 
     dataset = dataset.padded_batch(batch_size=batch_size,
