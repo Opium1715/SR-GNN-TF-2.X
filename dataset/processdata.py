@@ -60,8 +60,8 @@ with open(dataset, 'r') as f:
             session_clicks[session_id] = [item]
         ctr += 1
         count_limit += 1
-        if count_limit > 500000:  # 104w
-            break
+        # if count_limit > 100000:  # 104w
+        #     break
     date = ''
     if opt.dataset == 'yoochoose':
         date = time.mktime(time.strptime(cur_date[:19], '%Y-%m-%dT%H:%M:%S'))
